@@ -4,12 +4,13 @@
   "license": "MIT",
   "scripts": {
     "ng": "ng",
-    "start": "ng serve",
+    "start": "concurrently -n \"proxy,server\" -c \"green.bold,yellow.bold\" \"npm run client:start\" \"npm run server:start\" ",
     "build": "ng build",
     "test": "ng test",
     "lint": "ng lint",
     "e2e": "ng e2e",
-    "server:start": "node --inspect=5858 -r ts-node/register ./server/src/index.ts"
+    "server:start": "node --inspect=5858 -r ts-node/register ./server/src/index.ts",
+    "client:start": "ng serve --open"
   },
   "private": true,
   "dependencies": {
@@ -43,6 +44,7 @@
     "@types/socket.io": "^1.4.40",
     "@types/socket.io-client": "~1.4.29",
     "codelyzer": "~3.0.1",
+    "concurrently": "^4.1.0",
     "jasmine-core": "~2.6.2",
     "jasmine-spec-reporter": "~4.1.0",
     "karma": "~1.7.0",
