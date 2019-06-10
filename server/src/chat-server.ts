@@ -1,14 +1,16 @@
 import { createServer, Server } from 'http';
 import * as express from 'express';
+import { Application } from 'express';
 import * as socketIo from 'socket.io';
+import { Server as SocketIoServer, Socket } from 'socket.io';
 
 import { Message } from './model';
 
 export class ChatServer {
     private static readonly PORT:number = 3000;
-    private app: express.Application;
+    private app: Application;
     private server: Server;
-    private io: SocketIO.Server;
+    private io: SocketIoServer;
     private port: string | number;
 
     constructor() {
@@ -40,7 +42,7 @@ export class ChatServer {
             console.log('Running server on port %s', this.port);
         });
 
-        this.io.on('connect', (socket: any) => {
+        this.io.on('connect', (socket: Socket) => {
             console.log('Connected client on port %s.', this.port);
             socket.on('message', (m: Message) => {
                 console.log('[server](message): %s', JSON.stringify(m));
@@ -53,7 +55,7 @@ export class ChatServer {
         });
     }
 
-    public getApp(): express.Application {
+    public getApp(): Application {
         return this.app;
     }
 }
