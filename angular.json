@@ -101,7 +101,7 @@
             "tsConfig": [
               "client/tsconfig.app.json",
               "client/tsconfig.spec.json",
-              "e2e/tsconfig.json"
+              "e2e/tsconfig.e2e.json"
             ],
             "exclude": [
               "**/node_modules/**"
