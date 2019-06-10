@@ -6,14 +6,19 @@ import { Event } from '../model/event';
 
 import * as socketIo from 'socket.io-client';
 
-const SERVER_URL = 'http://localhost:8080';
-
 @Injectable()
 export class SocketService {
-    private socket;
+    private static readonly PORT:number = 3000;
+
+    private serverUrl: string;
+    private socket: SocketIOClient.Socket;
+
+    constructor() {
+        this.serverUrl = 'http://localhost:' + SocketService.PORT;
+    }
 
     public initSocket(): void {
-        this.socket = socketIo(SERVER_URL);
+        this.socket = socketIo(this.serverUrl);
     }
 
     public send(message: Message): void {
