@@ -7,7 +7,7 @@ import * as socketIo from 'socket.io-client';
 
 @Injectable()
 export class SocketService {
-    private static readonly PORT:number = 3000;
+    private static readonly PORT: number = 3000;
 
     private serverUrl: string;
     private socket: SocketIOClient.Socket;
