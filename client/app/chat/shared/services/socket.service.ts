@@ -1,9 +1,10 @@
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
-import { Message } from '../model/message';
-import { Event } from '../model/event';
-
 import * as socketIo from 'socket.io-client';
+
+import { Event } from '../model/event';
+import { Message } from '../model/message';
+
 
 @Injectable()
 export class SocketService {

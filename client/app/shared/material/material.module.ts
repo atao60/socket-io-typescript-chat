@@ -1,12 +1,12 @@
-import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
+import { NgModule } from '@angular/core';
 import {
   MatButtonModule,
   MatCardModule,
   MatDialog,
   MatDialogModule,
-  MatIconModule,
   MatFormFieldModule,
+  MatIconModule,
   MatInputModule,
   MatListModule,
   MatSidenavModule,

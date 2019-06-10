@@ -1,14 +1,13 @@
-import { Component, OnInit, ViewChildren, ViewChild, AfterViewInit, QueryList, ElementRef } from '@angular/core';
+import { AfterViewInit, Component, ElementRef, OnInit, QueryList, ViewChild, ViewChildren } from '@angular/core';
 import { MatDialog, MatDialogRef, MatList, MatListItem } from '@angular/material';
 
+import { DialogUserType } from './dialog-user/dialog-user-type';
+import { DialogUserComponent } from './dialog-user/dialog-user.component';
 import { Action } from './shared/model/action';
 import { Event } from './shared/model/event';
 import { Message } from './shared/model/message';
 import { User } from './shared/model/user';
 import { SocketService } from './shared/services/socket.service';
-import { DialogUserComponent } from './dialog-user/dialog-user.component';
-import { DialogUserType } from './dialog-user/dialog-user-type';
-
 
 const AVATAR_URL = 'https://api.adorable.io/avatars/285';
 
@@ -142,11 +141,11 @@ export class ChatComponent implements OnInit, AfterViewInit {
     if (action === Action.JOINED) {
       message = {
         from: this.user,
-        action: action
+        action
       }
     } else if (action === Action.RENAME) {
       message = {
-        action: action,
+        action,
         content: {
           username: this.user.name,
           previousUsername: params.previousUsername
