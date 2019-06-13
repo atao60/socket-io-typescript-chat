@@ -7,8 +7,8 @@ describe('typescript-chat-client App', () => {
     page = new TypescriptChatClientPage();
   });
 
-  it('should display welcome message', () => {
+  it('should  display app name in tool bar', () => {
     page.navigateTo();
-    expect(page.getParagraphText()).toEqual('Welcome to tcc!!');
+    expect(page.getParagraphText()).toEqual('Typescript Chat');
   });
 });
