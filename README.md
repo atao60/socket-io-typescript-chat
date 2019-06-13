@@ -72,13 +72,31 @@ The `socket.io` server will be running on port `3000`.
 
 Angular and Express files are being watched. Any change automatically creates a new bundle, restart Express server and reload your browser.
 
+## Running tests
+
+Run `npm test` to execute the frontend unit tests via [Karma](https://karma-runner.github.io).
+
+Run `npm run e2e:start` to execute the end-to-end tests via [Protractor](http://www.protractortest.org/).
+
+## Running linters
+
+Run `npm run lint` to execute both the frontend and backend TS linting via [TSLint](https://github.com/palantir/tslint).
+
+Run `npm run lint:client` to execute only the frontend TS linting via [TSLint](https://github.com/palantir/tslint).
+
+Run `npm run lint:server` to execute only the backend TS linting via [TSLint](https://github.com/palantir/tslint).
+
+Run `npm run lint:html` to execute the frontend HTML linting via [HTMLHint](https://github.com/htmlhint/HTMLHint).
+
+Run `npm run lint:scss` to execute the frontend SCSS linting via [SASS-Lint](https://github.com/sasstools/sass-lint).
+
 ## Contribution
 
 Contributions are greatly appreciated. You can contribute by adding `i18n` support with your language, the testing section or any other feature.
 
 ## Credits
 
-This project is a fork of [A Socket.io Chat Example Using TypeScript](https://github.com/luixaviles/socket-io-typescript-chat). A post and a live demo are available: 
+This project is a fork of [A Socket.io Chat Example Using TypeScript](https://github.com/luixaviles/socket-io-typescript-chat). A presentation and a live demo are available: 
 
 * [Real Time Apps with TypeScript: Integrating Web Sockets, Node & Angular](https://medium.com/dailyjs/real-time-apps-with-typescript-integrating-web-sockets-node-angular-e2b57cbd1ec1), Luis Aviles, Jan 9, 2018
 * [live demo](https://typescript-chat.firebaseapp.com).
