@@ -13,30 +13,24 @@ import {
   MatToolbarModule,
 } from '@angular/material';
 
+export const MATERIAL_MODULES = [
+  MatButtonModule,
+  MatCardModule,
+  MatDialogModule,
+  MatIconModule,
+  MatFormFieldModule,
+  MatInputModule,
+  MatListModule,
+  MatSidenavModule,
+  MatToolbarModule,
+];
+
 @NgModule({
   imports: [
     CommonModule,
-    MatButtonModule,
-    MatCardModule,
-    MatDialogModule,
-    MatIconModule,
-    MatFormFieldModule,
-    MatInputModule,
-    MatListModule,
-    MatSidenavModule,
-    MatToolbarModule,
+    ... MATERIAL_MODULES
   ],
-  exports: [
-    MatButtonModule,
-    MatCardModule,
-    MatDialogModule,
-    MatIconModule,
-    MatFormFieldModule,
-    MatInputModule,
-    MatListModule,
-    MatSidenavModule,
-    MatToolbarModule,
-  ],
+  exports: MATERIAL_MODULES,
   declarations: [],
   providers: [
     MatDialog
