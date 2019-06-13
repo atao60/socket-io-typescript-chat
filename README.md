@@ -54,7 +54,7 @@ npm audit
 ng --version
 ```
 
-> About `typescript`: its version is constrained to ">=3.4 <3.5" to please @angular/compiler-cli and @angular-devkit/build-angular.
+> About `typescript`: its version is constrained to ">=3.4 and <3.5" to please @angular/compiler-cli and @angular-devkit/build-angular.
 
 ### Run - Development mode
 
@@ -63,14 +63,13 @@ Launch the application with:
 ```bash
 npm start
 ```
-
 Your browser will open a view with the following URL: [http://localhost:4200](http://localhost:4200/).
 
 With [concurrently](https://github.com/kimmobrunfeldt/concurrently), both client and server sides are launched with Angular build, TypeScript compiler and Express server.
 
 The `socket.io` server will be running on port `3000`.
 
-Angular and Express files are being watched. Any change automatically creates a new bundle, restart Express server and reload your browser.
+Both client side (Angular) and server side (Express) files are being watched. Any change automatically either restarts the Express server or reloads your browser.
 
 ## Running tests
 

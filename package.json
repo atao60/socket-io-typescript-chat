@@ -4,7 +4,7 @@
   "license": "MIT",
   "scripts": {
     "ng": "ng",
-    "start": "concurrently -n \"proxy,server\" -c \"green.bold,yellow.bold\" \"npm run client:start\" \"npm run server:start\" ",
+    "start": "concurrently -n \"proxy,server\" -c \"green.bold,yellow.bold\" \"npm run client:dev:start\" \"npm run server:dev:start\" ",
     "build": "ng build",
     "test": "ng test",
     "lint": "concurrently -n \"client,server\" -c \"green.bold,yellow.bold\" \"npm run client:lint\" \"npm run server:lint\"",
@@ -13,8 +13,9 @@
     "scss:lint": "sass-lint \"client/**/*.scss\" -v",
     "server:lint": "tslint --project server/tsconfig.json --config tslint.json server/**/**.ts{,x} & echo-cli 'All lint rules checked with success'",
     "e2e": "ng e2e",
-    "server:start": "node --inspect=5858 -r ts-node/register ./server/src/index.ts",
-    "client:start": "ng serve --open"
+    "server:dev": "node --inspect=5858 -r ts-node/register ./server/src/index.ts",
+    "server:dev:start": "nodemon",
+    "client:dev:start": "ng serve --open"
   },
   "private": true,
   "dependencies": {
@@ -58,6 +59,7 @@
     "karma-coverage-istanbul-reporter": "^2.0.5",
     "karma-jasmine": "^2.0.1",
     "karma-jasmine-html-reporter": "^1.4.2",
+    "nodemon": "^1.19.1",
     "protractor": "^5.4.2",
     "sass-lint": "^1.13.1",
     "ts-node": "^8.2.0",
