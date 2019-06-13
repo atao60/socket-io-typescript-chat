@@ -1,13 +1,13 @@
-import { createServer, Server } from 'http';
 import * as express from 'express';
 import { Application } from 'express';
+import { createServer, Server } from 'http';
 import * as socketIo from 'socket.io';
 import { Server as SocketIoServer, Socket } from 'socket.io';
 
 import { Message } from './model';
 
 export class ChatServer {
-    private static readonly PORT:number = 3000;
+    private static readonly PORT: number = 3000;
     private app: Application;
     private server: Server;
     private io: SocketIoServer;
