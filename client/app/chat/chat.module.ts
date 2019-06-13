@@ -15,7 +15,10 @@ import { SocketService } from './shared/services/socket.service';
     ReactiveFormsModule,
     MaterialModule
   ],
-  declarations: [ChatComponent, DialogUserComponent],
+  declarations: [
+    ChatComponent,
+    DialogUserComponent
+  ],
   providers: [SocketService],
   entryComponents: [DialogUserComponent]
 })
